@@ -99,22 +99,25 @@ export const onGet: RequestHandler<EndpointData> = async ({
 
 // our pretty awesome function to load product data
 const loadProduct = (productId: string) => {
-  return new Promise<ProductData | null>((resolve) =>
-    setTimeout(() => {
-      const productPrice = PRODUCT_DB[productId];
-      if (productPrice) {
-        // awesome product database found product data
-        const productData: ProductData = {
-          productId,
-          price: productPrice,
-          description: `Product description here.`,
-        };
-        resolve(productData);
-      } else {
-        // awesome product database did not find product data
-        resolve(null);
+  return new Promise<ProductData | null>(
+    (resolve) =>
+      //setTimeout(() =>
+      {
+        const productPrice = PRODUCT_DB[productId];
+        if (productPrice) {
+          // awesome product database found product data
+          const productData: ProductData = {
+            productId,
+            price: productPrice,
+            description: `Product description here.`,
+          };
+          resolve(productData);
+        } else {
+          // awesome product database did not find product data
+          resolve(null);
+        }
       }
-    }, 250)
+    //}, 250)
   );
 };
 
