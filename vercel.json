@@ -1,14 +1,14 @@
 {
   "builds": [
     {
-      "src": "server/entry.express",
+      "src": "server/entry.express.js",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "server/entry.express"
+      "dest": "server/entry.express.js"
     }
   ]
 }
