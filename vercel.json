@@ -1,8 +1,0 @@
-{
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "server/entry.express.js"
-    }
-  ]
-}
